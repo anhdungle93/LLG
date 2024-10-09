@@ -2,8 +2,9 @@ var express = require('express');
 var util = require('../config/util.js');
 var router = express.Router();
 const ethers = require('ethers');
-const { getContractWithSigner } = require('../utils/interact');
-const { llgContractAddress, llgContractABI } = require('../utils/contractInfo');
+const { getContractWithSigner } = require('../client/src/utils/interact');
+const { llgContractAddress } = require('../client/src/utils/address');
+const llgContractABI = require('../client/src/utils/llg-contract-abi.json')
 
 router.get('/', function(req, res) {
     res.render('partials/play', {
